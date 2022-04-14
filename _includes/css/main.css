@@ -4,6 +4,12 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+html{
+    background-image: url(/assets/bak.svg);
+    /*background-size: 100%;*/
+    background-position: center;
+}
+
 body {
     overflow-x: hidden;
 }
