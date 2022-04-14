@@ -4,12 +4,6 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-html{
-    background-image: url("img/lineart.png");
-    /*background-size: 100%;*/
-    background-position: center;
-}
-
 body {
     overflow-x: hidden;
 }
@@ -95,6 +89,11 @@ header {
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
+}
+
+.container {
+    background-image: url("img/lineart.png");
+    background-position: center;
 }
 
 header img {
