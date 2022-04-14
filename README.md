@@ -1,80 +1,55 @@
-# Jekyll Instagram Portfolio Theme
+# Pineapple
 
-Clean, minimalistic and responsive portfolio theme for Jekyll powered by Bootstrap 4.
-For the portfolio section is used Instagram widget, but you can easily update it with another content source.
+Pineapple is a minimalistic [Jekyll](https://jekyllrb.com) portfolio theme that focuses on putting your projects in the spotlight.
 
-## Live Demo
+![Pineapple screenshot](https://user-images.githubusercontent.com/9528895/38713105-6dda8a74-3ec7-11e8-8062-8aa6cf24c795.jpg)
 
-https://portfolio-central.github.io/jekyll-instagram-portfolio-theme/
-![Jekyll Instagram Portfolio Theme](./screenshot.png "Jekyll Instagram Portfolio Theme")
+See Pineapple in action on the [demo site](https://arnolds.io/pineapple/).
 
-## Showcase
+## Contents
 
-The best usage examples:
+- [Setup](#setup)
+- [Deploy to Github Pages](#deploy-to-github-pages)
+- [Creating projects](#creating-projects)
+- [Resources](#resources)
+- [License](#license)
 
-- [Pavel Guzenko](http://guzenko.org.ua)
-- [Victor Mikitenko](https://mikitenko-org-ua.github.io/site/)
-- [Anthony Fuentes](http://anthonyfuentes.us/)
-- [Serhii Grytsyshyn](https://grserhii.github.io/)
+## Setup
 
-To add your example: fork the repo, add new line to the list above and create a pull request.
-
-## Featured on
-
-- [Template.net](https://www.template.net/cms-templates/jekyll/jekyll-themes-templates/)
-- [JekyllThemes.org](http://jekyllthemes.org/themes/instagram-portfolio-theme/)
-
-## Powered by
-
-- [Jekyll](https://jekyllrb.com/)
-- [Bootstrap 4](http://v4-alpha.getbootstrap.com/)
-- [jQuery](https://jquery.com/)
-- [SnapWidget](https://snapwidget.com)
-- [Google Fonts: Lobster](https://fonts.google.com/specimen/Lobster)
-- [Font Awesome](http://fontawesome.io/)
-
-## Installation
-Install Jekyll:
+Install dependencies:
 
 ```
-gem install jekyll bundler
+$ gem install jekyll bundler
 ```
 
-Install bundle dependiencies:
+Pulldown the project:
 
 ```
-bundle install
+$ git clone git@github.com:arnolds/pineapple.git
+$ cd pineapple
 ```
 
-When finished, run the dev server:
+Start Jekyll:
 
 ```
-bundle exec jekyll serve
+$ jekyll serve
 ```
 
-or just:
+Browse to http://127.0.0.1:4000/pineapple/ for some Pineapple goodness.
 
-```
-jekyll serve
+## Deploy to Github Pages
 
-```
-To stop the server, use `CTRL+C`.
+1. Fork this repository, then rename the repository to yourgithubusername.github.io.
+2. Update user configuration values in `_config.yml`, and also set `baseurl: ""`.
 
-## Building front-end assets: styles and scripts
+## Creating projects
 
-Install module dependencies:
+Projects are created as `.md` documents within the `_posts/projects` directory. They follow the same naming conventions as regular [Jekyll posts](https://jekyllrb.com/docs/posts/). Pineapple comes with four example projects, which you should use as a guide for creating your own e.g. [Red Pineapple](_posts/projects/2017-04-01-redpineapple.md).
 
-```
-npm install
-```
+## Resources
 
-Run the build script to generate updated front-end assets:
+- [Apple Devices PSD Mockup Templates](https://www.graphicsfuel.com/2016/04/apple-devices-psd-mockup-templates/)
 
-```
-npm run build
-```
+## License
 
-Watch for changes and automatically rebuild assets (`CTRL+C` to stop):
-```
-npm run watch
-```
+Open sourced under the [MIT license](LICENSE.md).
