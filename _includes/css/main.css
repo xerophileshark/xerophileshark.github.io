@@ -84,16 +84,13 @@ header {
     text-align: center;
     color: #fff;
     background: #{{ site.color.primary }};
+    background-image: url("img/#{{ site.background_image }}");
+    background-position: center;
 }
 
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
-}
-
-.container {
-    background-image: url("img/lineart.png");
-    background-position: center;
 }
 
 header img {
