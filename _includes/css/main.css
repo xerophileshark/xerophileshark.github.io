@@ -84,7 +84,7 @@ header {
     text-align: center;
     color: #fff;
     background: #{{ site.color.primary }};
-    background-image: url("img/{{ site.background_image }}");
+    background-image: url("img/{{ site.header_background_image }}");
     background-position: center;
 }
 
@@ -195,6 +195,11 @@ section.success {
     section.first {
         padding-top: 75px;
     }
+}
+
+#portfolio {
+    background-image: url("img/{{ site.portfolio_background_image }}");
+    background-position: center;
 }
 
 #portfolio .portfolio-item {
