@@ -1,55 +1,91 @@
-# Pineapple
+>
+># News (2020 July)
+>
+> **No more maintenance for this repo.** 
+>
+> I have something new for you: [Project Titan](https://github.com/szhielelp/NextJS-BlogTemplate-ProjectTitan)
+>
+> **Project Titan** is built with NextJS x Material UI x Typescript, with SAME styles as Project Gaia.
+>
+> You can migrate to Project Titan from Project Gaia seamlessly. You can [build a markdown site with Project Titan in ONLY 5 STEPS](https://titan.szhshp.org/tech/2021/05/30/Document-Main#Try-it-out)
+>
+>Check below two sites then you can see the differences:
+>
+>- Project Titan: [https://szhshp.org](https://szhshp.org)
+>- Project Gaia: [https://szhielelp.github.io/JekyllTheme-ProjectGaia/](https://szhielelp.github.io/JekyllTheme-ProjectGaia/)
 
-Pineapple is a minimalistic [Jekyll](https://jekyllrb.com) portfolio theme that focuses on putting your projects in the spotlight.
 
-![Pineapple screenshot](https://user-images.githubusercontent.com/9528895/38713105-6dda8a74-3ec7-11e8-8062-8aa6cf24c795.jpg)
 
-See Pineapple in action on the [demo site](https://arnolds.io/pineapple/).
 
-## Contents
 
-- [Setup](#setup)
-- [Deploy to Github Pages](#deploy-to-github-pages)
-- [Creating projects](#creating-projects)
-- [Resources](#resources)
-- [License](#license)
 
-## Setup
+----------------------
 
-Install dependencies:
+# Project Gaia
 
-```
-$ gem install jekyll bundler
-```
 
-Pulldown the project:
+<div align=center><img src="/img/logo.png"/></div>
 
-```
-$ git clone git@github.com:arnolds/pineapple.git
-$ cd pineapple
-```
 
-Start Jekyll:
+<p align="center">
+  <img src="https://img.shields.io/badge/link-996.icu-red.svg"/>
+  <img src="https://img.shields.io/badge/license-Anti%20996-blue.svg"/>
+  <img src="https://img.shields.io/badge/License-MIT-orange"/>
+  <img src="https://img.shields.io/badge/Version-2.0-green"/>
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/szhielelp/JekyllTheme-ProjectGaia">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/szhielelp/JekyllTheme-ProjectGaia">
+</p>
 
-```
-$ jekyll serve
-```
 
-Browse to http://127.0.0.1:4000/pineapple/ for some Pineapple goodness.
 
-## Deploy to Github Pages
+                                                                                                                                         
 
-1. Fork this repository, then rename the repository to yourgithubusername.github.io.
-2. Update user configuration values in `_config.yml`, and also set `baseurl: ""`.
+## Documents
 
-## Creating projects
+- [  Demo Page     ](https://szhielelp.github.io/JekyllTheme-ProjectGaia/)
+- [Documents](https://szhielelp.github.io/JekyllTheme-ProjectGaia-Docs)
 
-Projects are created as `.md` documents within the `_posts/projects` directory. They follow the same naming conventions as regular [Jekyll posts](https://jekyllrb.com/docs/posts/). Pineapple comes with four example projects, which you should use as a guide for creating your own e.g. [Red Pineapple](_posts/projects/2017-04-01-redpineapple.md).
 
-## Resources
 
-- [Apple Devices PSD Mockup Templates](https://www.graphicsfuel.com/2016/04/apple-devices-psd-mockup-templates/)
 
-## License
 
-Open sourced under the [MIT license](LICENSE.md).
+
+
+## Change Log
+
+- **Oct 18th 2019**
+Version 2 Beta Released!! Check it out -> [  Demo Page     ](https://szhielelp.github.io/JekyllTheme-ProjectGaia/)
+
+- **Mar 3rd 2018**
+Fixed critical styles issues
+
+- **Mar 1st 2018**
+Updated sidebar to a smooth style.
+
+- **Dec 20th 2017**
+Integrated Lightbox
+
+- **Dec 19th 2017**
+Added post searchbox
+
+- **Aug 20th, 2017**
+Added post plugin configuration
+
+- **May 30th, 2017**
+Added a reading progressbar for post page.
+
+- **May 6th, 2017**
+Updated font page
+Added global font style
+
+- **Apr 3nd, 2017**
+Added new font
+
+- **Mar 5th, 2017**
+Style updated
+
+- **Mar 1st, 2017**
+TOC plugin updated
+
+- **Feb 28th, 2017**
+Rebuild to include **Bootstrap 4-Alpha** and **JQuery 3**
