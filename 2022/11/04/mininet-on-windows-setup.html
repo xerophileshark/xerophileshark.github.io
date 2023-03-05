@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/assets/css/normalize.css"/>
+	<link rel="stylesheet" href="/assets/css/open-color.css"/>
+	<link rel="stylesheet" href="/assets/css/tao/styles.css"/>
+
+  <script async src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
+
+  <title>Run mininet on Windows</title>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+  <body>
+    <div class="wrapper">
+      <header class="masthead">
+  <h2 class="masthead-title">
+    <a href="/">Ali Abedi</a>
+  </h2>
+  
+  
+    <nav class="nav">
+      
+        <a class="nav-item " href="/">
+          Home
+        </a>
+      
+        <a class="nav-item " href="/about">
+          About
+        </a>
+      
+        <a class="nav-item " href="/archive">
+          Archive
+        </a>
+      
+      </nav>
+  
+</header>
+
+      <main>
+        <article class="post">
+  <div class="post-meta post-meta-top">
+    <div>
+      <time datetime="2022-11-04T10:00:00+01:00">
+        <i class="fa-solid fa-calendar-days"></i> 04 Nov 2022
+      </time></div>
+    
+    
+  </div>
+
+  <h1 class="post-title">Run mininet on Windows</h1>
+  
+
+  
+
+  
+  <div class="post-content">
+  
+    <p>This post is the documentation of setting up the <a href="http://mininet.org/">Mininet</a> on windows 10 for network emulation.</p>
+
+<p>The work flow is as follows: First, we use VirtualBox to install the Mininet VM Image. Then 
+we install Xming software to be the GUI of the headless Mininet server and we install PuTTy. 
+Xming is a free software port of the X Window Server to Microsoft Windows. 
+Basically, we use PuTTy to ssh into the mininet VM remotely and use Xming for GUI.</p>
+
+<h2 id="step-1-install-mininet-vm">Step 1: Install Mininet VM</h2>
+<p>Download the <a href="https://github.com/mininet/mininet/releases/">Mininet VM Image</a> and unzip it somewhere. Then double click on the “.ovf” file
+to install the VM in VirtualBox.
+<img src="/assets/images/2022-11-04-mininet-on-windows-setup/mininet-vm-files.jpg" alt="Mininet VM Files" /></p>
+
+<h3 id="create-second-network-adapter">Create second network adapter</h3>
+<p>After installing the VM, in the VirtualBox software under “Network” we see only “Adapter1” which corresponds to “eth0” interface in linux. This adapter’s mode is NAT which means that the host OS (here mininet ubuntu server) can access the host’s LAN (here our win 10 PC’s LAN). We can use this adapter to connect to the mininet ubuntu server via ssh.</p>
+
+<p>But we have to make another adapter to be used by mininet when creating networks by mn command. Therefore, we create another adapter with “Host-only Adapter” mode.
+<img src="/assets/images/2022-11-04-mininet-on-windows-setup/mininet-vm-network-adapters.jpg" alt="Mininet VM Network Adapters" /></p>
+
+<p>See <a href="https://www.nakivo.com/blog/virtualbox-network-setting-guide/">this source</a> for more information on VirtualBox Network Settings.</p>
+
+<h2 id="step-2-run-mmininet-vm">Step 2: Run Mmininet-VM</h2>
+<p>Now if you start the Mininet-VM, it will ask for login username and password.
+By default, the username and password are both <code class="language-plaintext highlighter-rouge">mininet</code>.</p>
+
+<p>After loggin in, we can start using Mininet by the mn command. However, we cannot use wireshark to capture 
+packets since the current ubuntu server is headless, i.e., it does not have a GUI. If you try to run the <code class="language-plaintext highlighter-rouge">wireshark</code> command, you will receive the following error:
+<img src="/assets/images/2022-11-04-mininet-on-windows-setup/mininet-wireshark-err1.jpg" alt="Mininet Wireshark Err1" /></p>
+
+<h3 id="create-eth1-network-interface">Create eth1 network interface</h3>
+<p>Now we have to create the network interface with DHCP. We can use the command to make <code class="language-plaintext highlighter-rouge">eth1</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo dhclient eth1
+</code></pre></div></div>
+
+<p>But, after each restart, this interface will be removed. So to make a permannt
+<code class="language-plaintext highlighter-rouge">eth1</code>, we 
+have to put it in the file <code class="language-plaintext highlighter-rouge">/etc/rc.local</code> the below text:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# mininet: regenerate ssh keys if we deleted them
+if ! stat -t /etc/ssh/*key* &gt;/dev/null 2&gt;&amp;1; then
+    /usr/sbin/dpkg-reconfigure openssh-server
+fi
+sudo dhclient eth1 # add this line
+exit 0
+</code></pre></div></div>
+
+<p>then use the following command to restart the network:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo systemctl restart systemd-networkd
+</code></pre></div></div>
+
+<h2 id="step-3-ssh-into-mmininet-vm">Step 3: ssh Into Mmininet-VM</h2>
+<p>First we have to obtain the ip address of mininet ubuntu machine in out LAN. So in the Mininet-VM we type
+<code class="language-plaintext highlighter-rouge">ifconfig</code>, and note down the inet of <code class="language-plaintext highlighter-rouge">eth0</code> adapter which in our case is <code class="language-plaintext highlighter-rouge">192.168.56.101</code>.
+First run Xming program. It will create an Xming server. Then open the putty
+and under connection -&gt; SSH -&gt; X11, tick the “Enable X11 forwarding”. Then in the session, put the obtained ip address in the previous step and connect.</p>
+
+<h2 id="step-4-solve-wireshark-permission-problem">Step 4: Solve Wireshark Permission Problem</h2>
+<p>When you try to run packet capture on <code class="language-plaintext highlighter-rouge">eth1</code> or <code class="language-plaintext highlighter-rouge">Loopback: lo</code>, you will get a permission error like
+<img src="/assets/images/2022-11-04-mininet-on-windows-setup/Capture.jpg" alt="Wireshark access error" />
+To solve the problem, you have to follow the instruction in the message shown above.</p>
+
+<h2 id="test-the-setup">Test the setup</h2>
+<p>Now to test the setup, we run the following command in the Mininet-VM to create a simple network:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mn
+</code></pre></div></div>
+<p>This creates a network with two hosts <code class="language-plaintext highlighter-rouge">h1</code> and <code class="language-plaintext highlighter-rouge">h2</code>, two switches <code class="language-plaintext highlighter-rouge">s1</code> and <code class="language-plaintext highlighter-rouge">s2</code>, and a controller <code class="language-plaintext highlighter-rouge">c0</code>.</p>
+
+<p>Then connect to Mininet-VM remotely via ssh and open Wireshark. We can see that <code class="language-plaintext highlighter-rouge">s1-eth1</code> and <code class="language-plaintext highlighter-rouge">s1-eth2</code> 
+are added to the interfaces.
+<img src="/assets/images/2022-11-04-mininet-on-windows-setup/wireshark.jpg" alt="Wireshark Interfaces" />
+Now if we ping from <code class="language-plaintext highlighter-rouge">h1</code> to <code class="language-plaintext highlighter-rouge">h2</code> we can capture it in the Wireshark:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h1 ping h2
+</code></pre></div></div>
+
+
+  </div>
+
+  
+</article>
+
+<div class="pagination">
+  
+    <span class="prev post-prev unable"><i class="fas fa-chevron-left"></i></span>
+  
+  
+  
+    <span class="next post-next unable"><i class="fas fa-chevron-right"></i></span>
+  
+</div>
+
+
+      </main>
+      <footer class="footer">
+  
+  <div class="social">
+    
+      <a href="mailto:aliabedi7697@gmail.com" target="_blank">
+        <i class="fas fa-envelope" title="Email"></i>
+      </a>
+    
+      <a href="https://www.linkedin.com/in/aliabedi97/" target="_blank">
+        <i class="fab fa-linkedin" title="Linkedin"></i>
+      </a>
+    
+      <a href="https://github.com/xerophileshark" target="_blank">
+        <i class="fab fa-github" title="GitHub"></i>
+      </a>
+    
+  </div>
+  
+  
+  <div class="columns">
+    <p class="column">
+      &copy; <time datetime="2023-03-05T13:04:08+01:00">2023</time>. All rights reserved.
+    </p>
+
+    <p class="column">
+      Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://github.com/vfvong/jekyll-theme-tao" target="_blank">Tao</a>
+    </p>
+
+    
+    <p class="column">
+      This is my personal website. I regularly post about my recent works, thoughts, and experiences. Feel free to reach out to me on my social media!
+    </p>
+    
+  </div>
+</footer>
+  
+    </div>
+
+    
+
+    
+  </body>
+</html>
