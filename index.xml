@@ -2,10 +2,82 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ali Abedi</title>
-    <link>http://localhost:1313/</link>
+    <link>https://xerophileshark.github.io/</link>
     <description>Recent content on Ali Abedi</description>
-    <generator>Hugo -- 0.125.7</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 May 2024 00:26:18 +0200</lastBuildDate>
+    <atom:link href="https://xerophileshark.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Irancell post</title>
+      <link>https://xerophileshark.github.io/posts/irancell/</link>
+      <pubDate>Wed, 22 May 2024 00:26:18 +0200</pubDate>
+      <guid>https://xerophileshark.github.io/posts/irancell/</guid>
+      <description>&lt;p&gt;aepfoadifheiefu&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Local Website on RPi4 with Hugo and Jenkins</title>
+      <link>https://xerophileshark.github.io/posts/my-first-post/</link>
+      <pubDate>Wed, 22 May 2024 00:26:18 +0200</pubDate>
+      <guid>https://xerophileshark.github.io/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;How to install Jenkins on windows:
+&lt;a href=&#34;https://www.jenkins.io/doc/book/installing/windows/&#34;&gt;https://www.jenkins.io/doc/book/installing/windows/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hugo:
+&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;
+installed using &lt;code&gt;choko&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;set &lt;code&gt;nginx&lt;/code&gt; on RPi4 to server &lt;code&gt;hugo&lt;/code&gt;:
+&lt;a href=&#34;https://gideonwolfe.com/posts/sysadmin/hugonginx/&#34;&gt;https://gideonwolfe.com/posts/sysadmin/hugonginx/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Conversation with ChatGPT:
+&lt;a href=&#34;https://chatgpt.com/share/0ca4052b-164a-4020-ab38-f74ac0907161&#34;&gt;https://chatgpt.com/share/0ca4052b-164a-4020-ab38-f74ac0907161&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Deploying a static Hugo site with NGINX:
+&lt;a href=&#34;https://gideonwolfe.com/posts/sysadmin/hugonginx/&#34;&gt;https://gideonwolfe.com/posts/sysadmin/hugonginx/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Assuming that the development location on my windows machine is
+&lt;code&gt;D:\website\hugo\my-blog&lt;/code&gt;
+and &lt;code&gt;nginx&lt;/code&gt; is installed on target server (RPi4),
+the final Jenkins pipeline script:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-jenkins&#34; data-lang=&#34;jenkins&#34;&gt;pipeline {
+    agent any
+    
+    environment {
+        RPI_CREDS = credentials(&amp;#39;96877582-94e3-4fc4-93ed-e84e2c8be6d6&amp;#39;)
+        RPI_HOST = &amp;#39;10.0.0.169&amp;#39;
+        RPI_WEBSITE_DIR = &amp;#39;/var/www/html&amp;#39;
+    }
+
+    stages {
+        stage(&amp;#39;Build&amp;#39;) {
+            steps {
+                dir(&amp;#39;D:\\website\\hugo\\my-blog&amp;#39;) {
+                  // Build the Hugo site
+                    bat &amp;#34;hugo.exe&amp;#34;
+                }
+            }
+        }
+        stage(&amp;#39;Deploy&amp;#39;) {
+                steps {
+                    dir(&amp;#39;D:\\website\\hugo\\my-blog&amp;#39;) {
+                        // Create an archive of the built site
+                        bat &amp;#34;powershell Compress-Archive -Force -Path .\\public\\* -DestinationPath site.zip&amp;#34;
+                        //
+                        bat &amp;#34;&amp;#34;&amp;#34;
+                            plink -v -ssh -pw ${RPI_CREDS_PSW} ${RPI_CREDS_USR}@${RPI_HOST} &amp;#34;cd ${RPI_WEBSITE_DIR}; echo -e ${RPI_CREDS_PSW} | sudo -S rm -R *&amp;#34;
+                        &amp;#34;&amp;#34;&amp;#34;
+                        // Copy the archive to the Raspberry Pi
+                        bat &amp;#34;&amp;#34;&amp;#34;
+                            pscp -pw ${RPI_CREDS_PSW} site.zip ${RPI_CREDS_USR}@${RPI_HOST}:${RPI_WEBSITE_DIR}/site.zip
+                        &amp;#34;&amp;#34;&amp;#34;
+                        // Connect to the RPi and extract the archive
+                        bat &amp;#34;&amp;#34;&amp;#34;
+                            plink -v -ssh -pw ${RPI_CREDS_PSW} ${RPI_CREDS_USR}@${RPI_HOST} &amp;#34;echo -e ${RPI_CREDS_PSW} | sudo -S unzip -o ${RPI_WEBSITE_DIR}/site.zip -d ${RPI_WEBSITE_DIR}; echo -e ${RPI_CREDS_PSW} | sudo -S rm ${RPI_WEBSITE_DIR}/site.zip&amp;#34;
+                        &amp;#34;&amp;#34;&amp;#34;
+                    }
+                }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I build this pipeline on my local machine with built-in node.
+PUTTY &lt;code&gt;plink&lt;/code&gt; and &lt;code&gt;pscp&lt;/code&gt; commands need to be installed on the machine.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

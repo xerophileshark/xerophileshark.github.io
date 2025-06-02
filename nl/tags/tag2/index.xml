@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tag2 on Ali Abedi</title>
+    <link>http://localhost:1313/nl/tags/tag2/</link>
+    <description>Recent content in Tag2 on Ali Abedi</description>
+    <generator>Hugo -- 0.147.7</generator>
+    <language>nl</language>
+    <lastBuildDate>Fri, 09 May 2025 16:35:25 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/nl/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mijn eerste post</title>
+      <link>http://localhost:1313/nl/posts/mijn-post/</link>
+      <pubDate>Fri, 09 May 2025 16:35:25 +0200</pubDate>
+      <guid>http://localhost:1313/nl/posts/mijn-post/</guid>
+      <description>&lt;p&gt;Hoi!&lt;/p&gt;
+&lt;p&gt;Dit is mijn heerlijke eerste post.&lt;/p&gt;
+&lt;p&gt;Dooi!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
