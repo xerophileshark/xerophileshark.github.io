@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>علی عابدی</title>
-    <link>http://localhost:1313/fa/</link>
+    <link>https://xerophileshark.github.io/fa/</link>
     <description>Recent content on علی عابدی</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>fa</language>
-    <lastBuildDate>Fri, 09 May 2025 16:35:25 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/fa/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>پست دوم من</title>
-      <link>http://localhost:1313/fa/posts/random-post/</link>
-      <pubDate>Fri, 09 May 2025 16:35:25 +0200</pubDate>
-      <guid>http://localhost:1313/fa/posts/random-post/</guid>
-      <description>&lt;p&gt;این هم پست دوم من به زبان فارسی است.&lt;/p&gt;
-&lt;p&gt;خدانهدار.&lt;/p&gt;
-&lt;p&gt;۰۹۳۶۷۵۷۹۹۸۵&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>کدام شغل ها در برابر AI امن هستند؟</title>
-      <link>http://localhost:1313/fa/posts/ai-takeover/</link>
-      <pubDate>Sun, 09 Jun 2024 16:35:25 +0200</pubDate>
-      <guid>http://localhost:1313/fa/posts/ai-takeover/</guid>
-      <description>&lt;p&gt;این هم متنی به زبان فارس است.&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xerophileshark.github.io/fa/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

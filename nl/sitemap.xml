@@ -2,121 +2,108 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/nl/</loc>
+    <loc>https://xerophileshark.github.io/nl/</loc>
     <lastmod>2025-05-09T16:35:25+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="https://xerophileshark.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/"
+                href="https://xerophileshark.github.io/fa/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/"
+                href="https://xerophileshark.github.io/nl/"
                 />
   </url><url>
-    <loc>http://localhost:1313/nl/posts/mijn-post/</loc>
-    <lastmod>2025-05-09T16:35:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nl/posts/</loc>
+    <loc>https://xerophileshark.github.io/nl/posts/</loc>
     <lastmod>2025-05-09T16:35:25+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/"
+                href="https://xerophileshark.github.io/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/posts/"
+                href="https://xerophileshark.github.io/fa/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/posts/"
+                href="https://xerophileshark.github.io/nl/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/nl/tags/tag1/</loc>
-    <lastmod>2025-05-09T16:35:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nl/tags/tag2/</loc>
-    <lastmod>2025-05-09T16:35:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nl/tags/</loc>
-    <lastmod>2025-05-09T16:35:25+02:00</lastmod>
+    <loc>https://xerophileshark.github.io/nl/archive/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="https://xerophileshark.github.io/en/archive/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/tags/"
+                href="https://xerophileshark.github.io/fa/archive/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/tags/"
+                href="https://xerophileshark.github.io/nl/archive/"
                 />
   </url><url>
-    <loc>http://localhost:1313/nl/posts/mijn-2nd-post/</loc>
-    <lastmod>2025-04-09T17:30:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nl/archive/</loc>
+    <loc>https://xerophileshark.github.io/nl/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/archive/"
+                href="https://xerophileshark.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/archive/"
+                href="https://xerophileshark.github.io/fa/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/archive/"
+                href="https://xerophileshark.github.io/nl/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/nl/categories/</loc>
+    <loc>https://xerophileshark.github.io/nl/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="https://xerophileshark.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/categories/"
+                href="https://xerophileshark.github.io/fa/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/categories/"
+                href="https://xerophileshark.github.io/nl/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/nl/search/</loc>
+    <loc>https://xerophileshark.github.io/nl/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/search/"
+                href="https://xerophileshark.github.io/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="http://localhost:1313/fa/search/"
+                href="https://xerophileshark.github.io/fa/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nl"
-                href="http://localhost:1313/nl/search/"
+                href="https://xerophileshark.github.io/nl/search/"
                 />
   </url>
 </urlset>
