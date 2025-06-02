@@ -2,24 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Ali Abedi</title>
-    <link>https://xerophileshark.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Ali Abedi</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 May 2024 00:26:18 +0200</lastBuildDate>
-    <atom:link href="https://xerophileshark.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 16:35:25 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Which Jobs Can Survive AI Takeover</title>
+      <link>http://localhost:1313/posts/which-jobs-can-survive-ai-takeover/</link>
+      <pubDate>Sun, 09 Jun 2024 16:35:25 +0200</pubDate>
+      <guid>http://localhost:1313/posts/which-jobs-can-survive-ai-takeover/</guid>
+      <description>&lt;p&gt;Well, to say the least, no one can survive AI takeover.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Irancell post</title>
-      <link>https://xerophileshark.github.io/posts/irancell/</link>
+      <link>http://localhost:1313/posts/irancell/</link>
       <pubDate>Wed, 22 May 2024 00:26:18 +0200</pubDate>
-      <guid>https://xerophileshark.github.io/posts/irancell/</guid>
+      <guid>http://localhost:1313/posts/irancell/</guid>
       <description>&lt;p&gt;aepfoadifheiefu&lt;/p&gt;</description>
     </item>
     <item>
       <title>Local Website on RPi4 with Hugo and Jenkins</title>
-      <link>https://xerophileshark.github.io/posts/my-first-post/</link>
+      <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Wed, 22 May 2024 00:26:18 +0200</pubDate>
-      <guid>https://xerophileshark.github.io/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;How to install Jenkins on windows:
 &lt;a href=&#34;https://www.jenkins.io/doc/book/installing/windows/&#34;&gt;https://www.jenkins.io/doc/book/installing/windows/&lt;/a&gt;&lt;/p&gt;

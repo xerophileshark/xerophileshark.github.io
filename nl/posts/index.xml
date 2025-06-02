@@ -2,11 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Ali Abedi</title>
-    <link>https://xerophileshark.github.io/nl/posts/</link>
+    <link>http://localhost:1313/nl/posts/</link>
     <description>Recent content in Posts on Ali Abedi</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>nl</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://xerophileshark.github.io/nl/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 May 2025 16:35:25 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/nl/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mijn eerste post</title>
+      <link>http://localhost:1313/nl/posts/mijn-post/</link>
+      <pubDate>Fri, 09 May 2025 16:35:25 +0200</pubDate>
+      <guid>http://localhost:1313/nl/posts/mijn-post/</guid>
+      <description>&lt;p&gt;Hoi!&lt;/p&gt;
+&lt;p&gt;Dit is mijn heerlijke eerste post.&lt;/p&gt;
+&lt;p&gt;Dooi!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mijn 2nd post</title>
+      <link>http://localhost:1313/nl/posts/mijn-2nd-post/</link>
+      <pubDate>Wed, 09 Apr 2025 17:30:25 +0200</pubDate>
+      <guid>http://localhost:1313/nl/posts/mijn-2nd-post/</guid>
+      <description>&lt;p&gt;Hoi!&lt;/p&gt;
+&lt;p&gt;Dit is mijn heerlijke tweede post in het Nederlandse taal.&lt;/p&gt;
+&lt;p&gt;Dit is een afbeelding van Hollow Knigh game:
+&lt;img loading=&#34;lazy&#34; src=&#34;images/hollow_knight.jpg#center&#34; alt=&#34;Image alt&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Tot later!&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
